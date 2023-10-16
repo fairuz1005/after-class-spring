@@ -1,0 +1,32 @@
+spring:
+ autoconfigure:
+   exclude: org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration, org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration, org.springframework.boot.autoconfigure.jdbc.DataSourceTransactionManagerAutoConfiguration
+ cloud:
+   gateway:
+     routes:
+#       - id: swiggy-app
+#         uri: lb://SWIGGY-APP
+#         predicates:
+#           - Path=/swiggy/**
+#         filters:
+#           - AuthenticationFilter
+
+       - id: web-forum-service
+         uri: http://localhost:9093
+         predicates:
+           - Path=/api/v1/web-forum-service/**
+         filters:
+           - StripPrefix=3
+#           - AuthenticationFilter
+
+       - id: auth-service
+         uri: http://localhost:9094
+         predicates:
+           - Path=/api/v1/auth-service/**
+         filters:
+           - StripPrefix=3
+
+ application:
+   name: API-GATEWAY
+
+

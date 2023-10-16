@@ -1,0 +1,67 @@
+package com.metrodataacademy.controller;
+
+import com.metrodataacademy.domain.dto.request.ReqLoginDto;
+import com.metrodataacademy.domain.dto.request.ReqRegisterDto;
+import com.metrodataacademy.domain.dto.response.ResTemplateDto;
+import com.metrodataacademy.service.AuthService;
+import com.metrodataacademy.service.interfaces.UserService;
+import com.metrodataacademy.util.JwtUtil;
+import jakarta.servlet.http.HttpServletResponse;
+import jakarta.validation.Valid;
+import lombok.RequiredArgsConstructor;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+@RestController
+@RequiredArgsConstructor
+@RequestMapping("/auth")
+public class AuthController {
+
+    private final JwtUtil jwtUtils;
+    private final UserService userService;
+    private final AuthService authService;
+
+    /**
+     *
+     * @param data
+     * @return
+     */
+    @PostMapping("/register")
+    public ResponseEntity<ResTemplateDto> register(@Valid @RequestBody ReqRegisterDto data) {
+        return authService.register(data);
+    }
+
+    /**
+     *
+     * @param loginData
+     * @param response
+     * @return
+     */
+    @PostMapping("/login")
+    public ResponseEntity<ResTemplateDto> login(@RequestBody ReqLoginDto loginData, HttpServletResponse response) {
+        return authService.login(loginData, response);
+    }
+
+    /**
+     *
+     * @param refreshToken
+     * @return
+     */
+    @PostMapping("/refresh-token")
+    public ResponseEntity<ResTemplateDto> refreshToken(@RequestBody String refreshToken) {
+        return authService.refreshToken(refreshToken);
+    }
+
+
+    /**
+     * Validate token for local REST service
+     * @param authToken
+     * @return Response Entity
+     */
+   @PostMapping("/validate-token")
+   public ResponseEntity<ResTemplateDto> validateAuthToken(@RequestHeader("Authorization") String authToken){
+
+       return authService.validateToken(authToken);
+
+   }
+}
