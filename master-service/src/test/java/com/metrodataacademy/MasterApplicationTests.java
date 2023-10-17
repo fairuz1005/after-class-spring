@@ -1,10 +1,10 @@
-package com.javatechie;
+package com.metrodataacademy;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class ApiGatewayApplicationTests {
+class MasterApplicationTests {
 
 	@Test
 	void contextLoads() {

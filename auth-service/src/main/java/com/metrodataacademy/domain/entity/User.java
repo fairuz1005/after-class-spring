@@ -49,6 +49,9 @@ public class User {
     private String jenisKelamin;
 
     @Column
+    private String profilePicture;
+
+    @Column
     @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
     private LocalDate tanggalLahir;
 

@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "medis-379003",
+  "private_key_id": "12c7256746a66f22a2c360a2600a54c0159f7983",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQDpcEeiKuL/wXru\n6XP4Xi3mmPt8l0J5EvoX2hKBlftTZ7+ERc9CuCF+KVRajHNgkzf84IOdrkb+CTrN\nZ58Qh1cmHjfP3lcZ0fAcsZ+uJD8qaei3DB5PD7Sd1eJH6d+JTzwJ+XHe81RzL5Pw\nBLX/3EfISmAupKmRPCBIHZQ9O66oKhTHblWnM1y2+VvC8qTXliecjufXgRsk/56B\nAcc1iA78364TFvmqRBJn2RF4dGp4hV/bAFjXE/T2O896wilFe5OVto9f+fBzuVxk\nHuTn8frZqQ+OFnNV7G2hwKTwGnwm3+zZOcfFa96aXtT4kpPUh2khmeQVJagwXhkS\n2IZv8nTxAgMBAAECggEAB1etIyJM8001Rg5BA/EHadNKRr4VvMvuYqFs91c9uV8A\nKMOO3DsBL7ASW4pDJ0ieKFWyAhvNFxi4eSU/HTSalsP4zrCgRftC3Y4vNvmkJHwC\nEj7e9a7paBUGCevG6JFd0rT+QkxeTcSzdydYx6hYuCmxuonanQs6ezY191KZIOgp\njcbEEi6CjoygsBcCObPTcWFdyDnyMKhDNbOQxsExua1FDSZvQZUNBG2LUHdeDKqG\nBVuv6lglok8qcmHKPyEBPTkoKrsrJ4yk80JMiwsn2RcRAFLv0yDjuPuAREswwaci\n8bWqU4wHl/HE5vHODqC3JD6rIgAnZLN3btioQ1ysAQKBgQD819F2N60immC1QMZX\nbYZYo9NnxDXXNMLig93/cM8NkEXBvkngBTq38yIa43IzrfymA/1f+xdVvgXazoSk\nRmErR0PRtjr1zxV6Y05FDFaJvgMM7eL3heJfCDHQ5f1R7l3gejIV3Wmf97CZYzte\nA+w9c/Fdg5goHCcsPJMQ0+U28QKBgQDsWnALQ+yHcWjyq+BKaFUOi9enzef4ntpQ\nyYVFfEsJ6oeLwNTviuM++1PwYwf0r/rJKS7unB1pGBoLJSPP3IgpCO5KnaxtUfCV\nx1i6o95E2cbgwFe6dTcMJcFHt0kDTpSSTAvtrUkHyzLitxQt1ByWsAalIQxrR6Fy\ndN1sC20eAQKBgBNvy8xYr1iPoYuNdTHXW5KI1YGOlcz7Y1fiZzhxxZj3VEV2iVtN\nS5xEdoS2o1rRrzBb8ihktwCCYRTW919hgarACbifV5z51F7aL3QjZKumDbn6t43r\nnuFLUfkLFRQtTM4q1prTsID5m3vPIwsxJgH7XbyglxvOPjyqU2vhvichAoGAP2Wm\nxi7LBC2Uc/tMZ0kC/6rdBsLBZTve3Wqgl9nWGuvQvdjUhQhhGiS6CDHYEXcestSc\nJR60+NqhKboll/zUfQVLPbJ7bLtc6CAXmcCYvykXInQVVAta36RE6uKr7/ok+fTy\nAifH/hIwLQXkoMJThMvkjGiH90K4eIYGWpPaCgECgYBpgCQA/z74L365doiZ+61X\n36QYEE87q4ngJfdDqGYj4m90QNHIOXLPzmqOcCrI537lA1dEiER/QSAAVhZaJyUf\nQBTLEfuknbGxCSyVjKUiqst3glfUMRRnxIvTc8yKdu5C1PIUEezSLmWysOtHRyXe\nlA6VcMhsSHQVWiuBhCnujw==\n-----END PRIVATE KEY-----\n",
+  "client_email": "storage-admin@medis-379003.iam.gserviceaccount.com",
+  "client_id": "117495001542021347448",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/storage-admin%40medis-379003.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}

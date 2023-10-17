@@ -141,6 +141,7 @@ public class AuthService {
         claims.put("email", user.getEmail());
         claims.put("username", user.getUsername());
         claims.put("name", user.getName());
+        claims.put("profilePicture", user.getProfilePicture());
         claims.put("roles", roles);
         return claims;
     }

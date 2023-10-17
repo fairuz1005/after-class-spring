@@ -4,20 +4,19 @@ spring:
  cloud:
    gateway:
      routes:
-#       - id: swiggy-app
-#         uri: lb://SWIGGY-APP
-#         predicates:
-#           - Path=/swiggy/**
-#         filters:
-#           - AuthenticationFilter
-
        - id: web-forum-service
          uri: http://localhost:9093
          predicates:
            - Path=/api/v1/web-forum-service/**
          filters:
            - StripPrefix=3
-#           - AuthenticationFilter
+
+       - id: master-service
+         uri: http://localhost:9092
+         predicates:
+           - Path=/api/v1/master-service/**
+         filters:
+           - StripPrefix=3
 
        - id: auth-service
          uri: http://localhost:9094

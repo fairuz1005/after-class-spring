@@ -1,11 +1,11 @@
-package com.metrodataacademy.domain.dto.response;
+package com.metrodataacademy.domain.dto;
 
 import lombok.Data;
 
 import java.util.List;
 
 @Data
-public class ResValidateTokenDto {
+public class AuthorizationDto {
     private String id;
     private String name;
     private String email;
