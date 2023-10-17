@@ -19,13 +19,18 @@ spring:
            - StripPrefix=3
 
        - id: auth-service
-         uri: http://localhost:9094
+         uri: lb://AUTH-SERVICE
          predicates:
            - Path=/api/v1/auth-service/**
          filters:
            - StripPrefix=3
 
  application:
-   name: API-GATEWAY
+   name: api-gateway
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
 
 

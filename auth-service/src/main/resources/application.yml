@@ -1,0 +1,38 @@
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+  instance:
+    hostname: localhost
+    instance-id: ${spring.application.name}:${instanceId:${random.value}}
+
+spring:
+  application:
+    name: auth-service
+  datasource:
+    url: jdbc:postgresql://localhost:5432/db_afterclass_auth
+    username: postgres
+    password: postgres
+  jpa:
+    properties:
+      hibernate:
+        jdbc:
+          lob:
+            non_contextual_creation: true
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+    show-sql: true
+    open-in-view: false
+    hibernate:
+      ddl-auto: update
+
+server:
+  port: 9095
+  error:
+    include-message: always
+
+auth:
+  app:
+    jwtRefreshSecret: matagaruda181dsx24602006486361RFS51234134134123124134141321312fakdjfoianclneoinaoinedoianfhoiaheoifhoifhoiehofish
+    jwtSecret: matagaruda181dsx246020064863613243234123124134jsNckhjsbcsadefebkjzbdjfabofneoianljfbaeojbffjanljkfnlaf
+    jwtExpirationMs: 3600000
+    jwtRefreshExpirationMs: 2628002880
