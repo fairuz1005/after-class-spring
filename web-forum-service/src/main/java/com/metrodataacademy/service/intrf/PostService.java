@@ -6,7 +6,7 @@ import com.metrodataacademy.domain.dto.response.ResBaseDto;
 import org.springframework.http.ResponseEntity;
 
 public interface PostService {
-    ResponseEntity<ResBaseDto> insertCommentThreadsPosts(ReqPostDto reqCommentThreadsPostDto, AuthorizationDto authDto);
+    ResponseEntity<ResBaseDto> createPostToThread(ReqPostDto reqCommentThreadsPostDto, AuthorizationDto authDto);
 
-    ResponseEntity<ResBaseDto> getListPost(String threadsId, String page);
+    ResponseEntity<ResBaseDto> getListPostFromThreads(String threadsId, String page);
 }

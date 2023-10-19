@@ -1,7 +1,6 @@
 package com.metrodataacademy.service.impl;
 
 import com.metrodataacademy.domain.dto.AuthorizationDto;
-import com.metrodataacademy.domain.dto.response.ResBaseDto;
 import com.metrodataacademy.domain.dto.response.ResBaseValidateTokenDto;
 import com.metrodataacademy.service.intrf.AuthServiceRestTemplate;
 import lombok.extern.slf4j.Slf4j;
@@ -20,10 +19,6 @@ import java.util.Objects;
 @Slf4j
 public class AuthServiceRestTemplateImpl implements AuthServiceRestTemplate {
 
-    /**
-     * the url must be defined on application.properties
-     * make sure the API gateway it's already configured
-     */
     @Value("http://localhost:8080/api/v1/auth-service")
     private String url;
 
@@ -35,8 +30,6 @@ public class AuthServiceRestTemplateImpl implements AuthServiceRestTemplate {
 
     @Override
     public AuthorizationDto getLogin(String authToken) {
-        log.info("Validate Login");
-
         // set header
         HttpHeaders headers = new HttpHeaders();
         headers.set("Authorization", authToken);
@@ -50,7 +43,6 @@ public class AuthServiceRestTemplateImpl implements AuthServiceRestTemplate {
             if (responseEntity.getStatusCode().value() != 200){
                 return authDto;
             }
-
 
             // mapping response to dto
             authDto = Objects.requireNonNull(responseEntity.getBody().getData());

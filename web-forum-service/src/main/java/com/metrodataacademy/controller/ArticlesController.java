@@ -6,9 +6,9 @@ import com.metrodataacademy.domain.dto.request.ReqCreateArticlesDto;
 
 import com.metrodataacademy.domain.dto.request.ReqGetArticles;
 import com.metrodataacademy.domain.dto.response.ResBaseDto;
-import com.metrodataacademy.domain.entity.Articles;
-import com.metrodataacademy.service.impl.ArticlesServiceImpl;
+import com.metrodataacademy.service.intrf.ArticlesService;
 import jakarta.servlet.http.HttpServletRequest;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -18,16 +18,15 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/article")
 public class ArticlesController {
 
-    private final ArticlesServiceImpl articlesService;
+    private final ArticlesService articlesService;
 
     @PostMapping("/list")
-    public ResponseEntity<?> getArticlesList(@RequestBody ReqGetArticles articlesRequest){
+    public ResponseEntity<?> getArticlesList(@Valid @RequestBody ReqGetArticles articlesRequest){
         return articlesService.getAllArticleList(articlesRequest);
     }
 
     @GetMapping("")
     public ResponseEntity<ResBaseDto> getArticlesById(@RequestParam String id){
-//        UUID uuid = UUID.fromString(id);
         return articlesService.getArticlesById(id);
     }
 
@@ -43,13 +42,7 @@ public class ArticlesController {
      * @return
      */
     @PostMapping("/create")
-    public ResponseEntity<ResBaseDto> insertArticle(@RequestBody ReqCreateArticlesDto reqCreateArticlesDto, HttpServletRequest servletRequest) {
-//        AuthorizationDto authDto = (AuthorizationDto) servletRequest.getAttribute(ConstantVariable.USER);
-//        boolean isRoleAdmin = authDto.getRoles().stream().anyMatch(item -> ConstantVariable.ROLE_ADMIN.equals(item.getName()));
-//        if (!isRoleAdmin){
-//            throw new AuthorizationException(ExceptionMessage.ATTEMPT_TO_REQUEST_NON_ROLE_ADMIN);
-//        }
-
+    public ResponseEntity<ResBaseDto> insertArticle(@Valid @RequestBody ReqCreateArticlesDto reqCreateArticlesDto, HttpServletRequest servletRequest) {
         return articlesService.insertArticle(reqCreateArticlesDto, servletRequest);
     }
 
@@ -61,12 +54,8 @@ public class ArticlesController {
      * @return
      */
     @PostMapping("/update")
-    public ResponseEntity<ResBaseDto> updateArticle(@RequestParam String id, @RequestBody ReqCreateArticlesDto reqCreateArticlesDto, HttpServletRequest servletRequest) {
+    public ResponseEntity<ResBaseDto> updateArticle(@RequestParam String id, @Valid @RequestBody ReqCreateArticlesDto reqCreateArticlesDto, HttpServletRequest servletRequest) {
         AuthorizationDto authDto = (AuthorizationDto) servletRequest.getAttribute(ConstantVariable.USER);
-//        boolean isRoleAdmin = authDto.getRoles().stream().anyMatch(item -> ConstantVariable.ROLE_ADMIN.equals(item.getName()));
-//        if (!isRoleAdmin){
-//            throw new AuthorizationException(ExceptionMessage.ATTEMPT_TO_REQUEST_NON_ROLE_ADMIN);
-//        }
         return articlesService.updateArticle(id, reqCreateArticlesDto, authDto);
     }
 }

@@ -39,10 +39,6 @@ public class Articles extends BaseEntity{
     @Column(nullable = false)
     private Integer counter;
 
-//    @ManyToMany(mappedBy = "articles")
-//    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
-//    private List<Categories> categories;
-
     @OneToMany(mappedBy = "articles", fetch = FetchType.EAGER)
     private List<ArticlesCategories> articlesCategories;
 

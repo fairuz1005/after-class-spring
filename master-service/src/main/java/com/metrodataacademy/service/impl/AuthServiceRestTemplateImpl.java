@@ -34,8 +34,6 @@ public class AuthServiceRestTemplateImpl implements AuthServiceRestTemplate {
 
     @Override
     public AuthorizationDto getLogin(String authToken) {
-        log.info("Validate Login");
-
         // set header
         HttpHeaders headers = new HttpHeaders();
         headers.set("Authorization", authToken);

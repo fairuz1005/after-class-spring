@@ -48,24 +48,9 @@ public class ArticlesServiceImpl implements ArticlesService {
     @Override
     public ResponseEntity<ResBaseDto> insertArticle(ReqCreateArticlesDto reqCreateArticlesDto, HttpServletRequest servletRequest) {
         try {
-            System.out.println("getin");
             AuthorizationDto authDto = (AuthorizationDto) servletRequest.getAttribute(ConstantVariable.USER);
-            System.out.println(authDto.getId());
-
-//            List<Categories> categoriesList = new ArrayList<>();
-//            reqCreateArticlesDto.getCategories().forEach(
-//                    categories -> {
-//                        Optional<Categories> categoriesOptional = categoriesRepository.findById(categories.getId());
-//                        categoriesOptional.ifPresent(categoriesList::add);
-//                    }
-//            );
-
             Articles articles = articlesMapper.reqCreateArticlesDtoToArticles(reqCreateArticlesDto);
-//            articles.setTitle(reqCreateArticlesDto.getTitle());
             articles.setSlug(SlugUtil.toSlug(reqCreateArticlesDto.getTitle()));
-//            articles.setBody(reqCreateArticlesDto.getBody());
-//            articles.setBanner(reqCreateArticlesDto.getBanner());
-//            articles.setImageUrl(reqCreateArticlesDto.getImageUrl());
             articles.setCounter(0);
             articles.setPublish(true);
             articles.setActive(true);
@@ -157,7 +142,7 @@ public class ArticlesServiceImpl implements ArticlesService {
         }
     }
 
-
+    @Override
     public ResponseEntity<ResBaseDto> getArticlesById(String id){
         Articles articles = articlesRepository.findById(id)
                 .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Articles ID is not found!!!"));
@@ -185,9 +170,6 @@ public class ArticlesServiceImpl implements ArticlesService {
     @Override
     public ResponseEntity<ResBaseDto>deleteArticle(String id){
         try {
-//            Articles articles = getArticlesById(id);
-//            articlesRepository.delete(articles);
-//            articles.setPublish(false);
             articlesRepository.deleteById(id);
             return new ResponseEntity<>(new ResBaseDto(null,ConstantVariable.SUCCESS),HttpStatus.OK);
         }catch (ResponseStatusException e) {
@@ -219,16 +201,6 @@ public class ArticlesServiceImpl implements ArticlesService {
                             }
                     );
                     articlesResponse.setCategories(categoriesDtoList);
-
-//                    response.
-//                    List<ResArticlesCategoriesDto> resArticlesCategories = new ArrayList<>();
-//                    resArticlesCategories.forEach(
-//                            responseAC -> {
-//                                articlesResponse.setCategories(response.getCategoryName());
-//                            }
-//                    );
-
-                    //articlesResponse.setCategoryName(response.getCategoryName());
                     responseList.add(articlesResponse);
                 }
         );

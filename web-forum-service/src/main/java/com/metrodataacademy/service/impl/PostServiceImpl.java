@@ -4,8 +4,7 @@ import com.metrodataacademy.domain.constant.ConstantVariable;
 import com.metrodataacademy.domain.dto.AuthorizationDto;
 import com.metrodataacademy.domain.dto.request.ReqPostDto;
 import com.metrodataacademy.domain.dto.response.ResBaseDto;
-import com.metrodataacademy.domain.dto.response.ResGetListPostDto;
-import com.metrodataacademy.domain.entity.Articles;
+import com.metrodataacademy.domain.dto.response.ResGetPostDto;
 import com.metrodataacademy.domain.entity.Post;
 import com.metrodataacademy.domain.entity.StagingUser;
 import com.metrodataacademy.domain.mapper.PostMapper;
@@ -35,7 +34,8 @@ public class PostServiceImpl implements PostService {
     private final PostMapper postMapper;
     private final StagingUserMapper stagingUserMapper;
 
-    public ResponseEntity<ResBaseDto> insertCommentThreadsPosts(ReqPostDto reqCommentThreadsPostDto, AuthorizationDto authorizationDto){
+    @Override
+    public ResponseEntity<ResBaseDto> createPostToThread(ReqPostDto reqCommentThreadsPostDto, AuthorizationDto authorizationDto){
         try{
             Post post = new Post();
             post.setContent(reqCommentThreadsPostDto.getContent());
@@ -49,9 +49,9 @@ public class PostServiceImpl implements PostService {
             post.setAuthor(stagingUser);
             postsRepository.save(post);
 
-            ResGetListPostDto resGetListPostDto = postMapper.postToResGetListPostDto(post);
-            resGetListPostDto.setAuthor(stagingUserMapper.stagingUserToResStagingUserDto(stagingUser));
-            return new ResponseEntity<>(new ResBaseDto(resGetListPostDto,"Success"),HttpStatus.OK);
+            ResGetPostDto resGetPostDto = postMapper.postToResGetListPostDto(post);
+            resGetPostDto.setAuthor(stagingUserMapper.stagingUserToResStagingUserDto(stagingUser));
+            return new ResponseEntity<>(new ResBaseDto(resGetPostDto,"Success"),HttpStatus.OK);
         }catch (ResponseStatusException e){
             throw new ResponseStatusException(e.getStatusCode(), e.getReason());
         }
@@ -59,15 +59,15 @@ public class PostServiceImpl implements PostService {
 
 
     @Override
-    public ResponseEntity<ResBaseDto> getListPost(String threadsId, String page) {
+    public ResponseEntity<ResBaseDto> getListPostFromThreads(String threadsId, String page) {
         Pageable pageable = PageRequest.of(Integer.parseInt(page) -1,
                 ConstantVariable.DATA_PER_PAGE);
 
-        List<ResGetListPostDto> resGetListPostDtoList = new ArrayList<>();
+        List<ResGetPostDto> resGetListPostDtoList = new ArrayList<>();
         Page<Post> pageResult = postsRepository.findByThreads_Id(threadsId, pageable);
         pageResult.forEach(response -> {
-            ResGetListPostDto resGetListPostDto = postMapper.postToResGetListPostDto(response);
-            resGetListPostDtoList.add(resGetListPostDto);
+            ResGetPostDto resGetPostDto = postMapper.postToResGetListPostDto(response);
+            resGetListPostDtoList.add(resGetPostDto);
         });
 
         return new ResponseEntity<>(new ResBaseDto(resGetListPostDtoList, ConstantVariable.SUCCESS), HttpStatus.OK);

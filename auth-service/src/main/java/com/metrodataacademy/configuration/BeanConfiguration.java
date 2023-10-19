@@ -12,8 +12,4 @@ public class BeanConfiguration {
         return new BCryptPasswordEncoder();
     }
 
-//    @Bean
-//    public ModelMapper modelMapper() {
-//        return new ModelMapper();
-//    }
 }

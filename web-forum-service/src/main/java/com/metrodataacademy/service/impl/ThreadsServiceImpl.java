@@ -5,7 +5,7 @@ import com.metrodataacademy.domain.dto.AuthorizationDto;
 import com.metrodataacademy.domain.dto.request.ReqCreateThreadsDto;
 import com.metrodataacademy.domain.dto.request.ReqGetListThreads;
 import com.metrodataacademy.domain.dto.response.ResBaseDto;
-import com.metrodataacademy.domain.dto.response.ResGetListThreadsDto;
+import com.metrodataacademy.domain.dto.response.ResGetThreadsDto;
 import com.metrodataacademy.domain.dto.response.ResStagingUserDto;
 import com.metrodataacademy.domain.entity.Post;
 import com.metrodataacademy.domain.entity.StagingUser;
@@ -47,15 +47,15 @@ public class ThreadsServiceImpl implements ThreadsService {
         threads.setCounter(threads.getCounter()+1);
         threadsRepository.save(threads);
 
-        ResGetListThreadsDto resGetListThreadsDto = threadsMapper.threadsToResGetListThreads(threads);
+        ResGetThreadsDto resGetThreadsDto = threadsMapper.threadsToResGetListThreads(threads);
 
         ResStagingUserDto resStagingUserDto = stagingUserMapper.stagingUserToResStagingUserDto(threads.getAuthor());
 
-        resGetListThreadsDto.setAuthor(resStagingUserDto);
+        resGetThreadsDto.setAuthor(resStagingUserDto);
 
-        resGetListThreadsDto.setTotalPostComments(threadsRepository.getTotalComments(id));
+        resGetThreadsDto.setTotalPostComments(threadsRepository.getTotalComments(id));
 
-        return new ResponseEntity<>(new ResBaseDto(resGetListThreadsDto, ConstantVariable.SUCCESS), HttpStatus.OK);
+        return new ResponseEntity<>(new ResBaseDto(resGetThreadsDto, ConstantVariable.SUCCESS), HttpStatus.OK);
     }
 
     @Override
@@ -85,13 +85,10 @@ public class ThreadsServiceImpl implements ThreadsService {
 
             threadsRepository.save(threads);
 
-            /*
-              to get response with id
-             */
-            ResGetListThreadsDto resGetListThreadsDto = new ResGetListThreadsDto();
-            resGetListThreadsDto.setId(threads.getId());
+            ResGetThreadsDto resGetThreadsDto = new ResGetThreadsDto();
+            resGetThreadsDto.setId(threads.getId());
 
-            return new ResponseEntity<>(new ResBaseDto(resGetListThreadsDto, ConstantVariable.SUCCESS), HttpStatus.OK);
+            return new ResponseEntity<>(new ResBaseDto(resGetThreadsDto, ConstantVariable.SUCCESS), HttpStatus.OK);
         } catch (ResponseStatusException e) {
             throw new ResponseStatusException(e.getStatusCode(), e.getReason());
         }
@@ -139,24 +136,13 @@ public class ThreadsServiceImpl implements ThreadsService {
                 pageResult = threadsRepository.findAllThreadsAsc(pageable);
             }
 
-            List<ResGetListThreadsDto> listThreadsList = new ArrayList<>();
+            List<ResGetThreadsDto> listThreadsList = new ArrayList<>();
             pageResult.forEach(response -> {
-                ResGetListThreadsDto resGetListThreadsDto = threadsMapper.threadsToResGetListThreads(response);
-//                resGetListThreads.setId(response.getId());
-//                resGetListThreads.setTitle(response.getTitle());
-//                int contentLength = response.getContent().length();
-//                if (contentLength > 50){
-//                    resGetListThreads.setContent(response.getContent().substring(0, 50));
-//                } else {
-//                    resGetListThreads.setContent(response.getContent());
-//                }
-//                resGetListThreads.setCreatedAt(response.getCreatedAt());
-//                resGetListThreads.setTotalViews(response.getCounter().toString());
+                ResGetThreadsDto resGetThreadsDto = threadsMapper.threadsToResGetListThreads(response);
+                resGetThreadsDto.setAuthor(stagingUserMapper.stagingUserToResStagingUserDto(response.getAuthor()));
+                resGetThreadsDto.setTotalPostComments(threadsRepository.getTotalComments(resGetThreadsDto.getId()));
 
-                resGetListThreadsDto.setAuthor(stagingUserMapper.stagingUserToResStagingUserDto(response.getAuthor()));
-                resGetListThreadsDto.setTotalPostComments(threadsRepository.getTotalComments(resGetListThreadsDto.getId()));
-
-                listThreadsList.add(resGetListThreadsDto);
+                listThreadsList.add(resGetThreadsDto);
             });
 
             return new ResponseEntity<>(new ResBaseDto(listThreadsList, ConstantVariable.SUCCESS), HttpStatus.OK);
@@ -176,12 +162,6 @@ public class ThreadsServiceImpl implements ThreadsService {
             listPost.forEach(post -> {
                 postRepository.delete(post);
             });
-
-//            List<PostLike> postLikes = postLikeRepository.findAllPostLikesByThreadId(id);
-//            postLikes.forEach(postLike -> {
-//                postLike.setActive(false);
-//                postLikeRepository.save(postLike);
-//            });
 
             return new ResponseEntity<>(new ResBaseDto(null, "Success"), HttpStatus.OK);
         } catch (ResponseStatusException e){

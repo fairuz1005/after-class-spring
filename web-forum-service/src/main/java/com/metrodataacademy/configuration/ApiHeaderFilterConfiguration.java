@@ -24,9 +24,7 @@ public class ApiHeaderFilterConfiguration extends OncePerRequestFilter {
 
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
-        log.info(request.getRequestURI());
         String token = request.getHeader("Authorization");
-        System.out.println(token);
         if (token == null) {
             response.sendError(HttpServletResponse.SC_UNAUTHORIZED);
             return;
@@ -44,6 +42,5 @@ public class ApiHeaderFilterConfiguration extends OncePerRequestFilter {
     protected boolean shouldNotFilter(HttpServletRequest request) throws ServletException {
         String path = request.getRequestURI();
         return "/no-Header".equals(path) || "/article/detail".equals(path) || "/article/list".equals(path);
-
     }
 }

@@ -21,47 +21,24 @@ public class AuthController {
     private final UserService userService;
     private final AuthService authService;
 
-    /**
-     *
-     * @param data
-     * @return
-     */
     @PostMapping("/register")
     public ResponseEntity<ResTemplateDto> register(@Valid @RequestBody ReqRegisterDto data) {
         return authService.register(data);
     }
 
-    /**
-     *
-     * @param loginData
-     * @param response
-     * @return
-     */
     @PostMapping("/login")
-    public ResponseEntity<ResTemplateDto> login(@RequestBody ReqLoginDto loginData, HttpServletResponse response) {
+    public ResponseEntity<ResTemplateDto> login(@Valid @RequestBody ReqLoginDto loginData, HttpServletResponse response) {
         return authService.login(loginData, response);
     }
 
-    /**
-     *
-     * @param refreshToken
-     * @return
-     */
     @PostMapping("/refresh-token")
     public ResponseEntity<ResTemplateDto> refreshToken(@RequestBody String refreshToken) {
         return authService.refreshToken(refreshToken);
     }
 
 
-    /**
-     * Validate token for local REST service
-     * @param authToken
-     * @return Response Entity
-     */
    @PostMapping("/validate-token")
    public ResponseEntity<ResTemplateDto> validateAuthToken(@RequestHeader("Authorization") String authToken){
-
        return authService.validateToken(authToken);
-
    }
 }

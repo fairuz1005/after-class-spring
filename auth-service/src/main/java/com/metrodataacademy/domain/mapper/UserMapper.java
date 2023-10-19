@@ -1,5 +1,6 @@
 package com.metrodataacademy.domain.mapper;
 
+import com.metrodataacademy.domain.dto.request.ReqUpdateUserDto;
 import com.metrodataacademy.domain.dto.response.ResValidateTokenDto;
 import com.metrodataacademy.domain.entity.Role;
 import com.metrodataacademy.domain.entity.User;
@@ -13,6 +14,8 @@ import java.util.List;
 @Mapper(componentModel = "spring")
 public interface UserMapper {
     ResValidateTokenDto userToResValidateTokenDto(User user);
+
+    void update(@MappingTarget User user, ReqUpdateUserDto reqUpdateUserDto);
 
     @AfterMapping
     default void mappingRoles(@MappingTarget ResValidateTokenDto resValidateTokenDto, User user) {

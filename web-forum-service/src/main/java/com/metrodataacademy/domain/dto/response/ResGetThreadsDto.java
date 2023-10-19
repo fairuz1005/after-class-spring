@@ -7,7 +7,7 @@ import java.sql.Timestamp;
 
 @Data
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class ResGetListThreadsDto {
+public class ResGetThreadsDto {
     private String id;
     private String title;
     private String content;

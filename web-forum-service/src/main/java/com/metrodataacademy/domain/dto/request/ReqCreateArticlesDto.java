@@ -6,10 +6,6 @@ import lombok.Data;
 
 import java.util.List;
 
-/**
- * DTO to insert title, body, banner, image data from tables (tb_m_articles)
- * and categories from the table (tb_m_categories)
- */
 @Data
 public class ReqCreateArticlesDto {
     @NotBlank
@@ -24,7 +20,5 @@ public class ReqCreateArticlesDto {
     @NotBlank
     private String imageUrl;
 
-
     private List<ReqListCategoryDto> categories;
-
 }
