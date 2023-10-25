@@ -1,4 +1,4 @@
-package com.metrodataacademy.service;
+package com.metrodataacademy.service.impl;
 
 import com.metrodataacademy.domain.constant.ConstantVariables;
 import com.metrodataacademy.domain.constant.ExceptionMessages;
@@ -13,6 +13,7 @@ import com.metrodataacademy.domain.mapper.UserMapper;
 import com.metrodataacademy.exception.AuthorizationException;
 import com.metrodataacademy.repository.RoleRepository;
 import com.metrodataacademy.repository.UserRepository;
+import com.metrodataacademy.service.interfaces.AuthService;
 import com.metrodataacademy.service.interfaces.UserService;
 import com.metrodataacademy.util.JwtUtil;
 import jakarta.servlet.http.HttpServletResponse;
@@ -28,10 +29,11 @@ import org.springframework.web.server.ResponseStatusException;
 
 import java.util.*;
 
+
 @Service
 @Transactional
 @RequiredArgsConstructor
-public class AuthService {
+public class AuthServiceImpl implements AuthService {
 
     private final JwtUtil jwtUtil;
     private final UserRepository userRepository;
@@ -40,6 +42,7 @@ public class AuthService {
     private final UserMapper userMapper;
     private final RoleRepository roleRepository;
 
+    @Override
     public ResponseEntity<ResTemplateDto> register(ReqRegisterDto data)  {
         try {
             Map<String, List<String>> errors = new HashMap<>();
@@ -59,10 +62,8 @@ public class AuthService {
                 return new ResponseEntity<>(new ResTemplateDto(errors, "Email or username has already been registered."), HttpStatus.BAD_REQUEST);
             }
 
-            User user = new User();
-            user.setEmail(data.getEmail());
-            user.setPassword(passwordEncoder.encode(data.getPassword()));
-            user.setUsername(data.getUsername());
+            User user = userMapper.reqRegisterDtoToUser(data);
+            user.setPassword(passwordEncoder.encode(user.getPassword()));
 
             Role role = roleRepository.findByName("ROLE_USER");
 
@@ -80,6 +81,7 @@ public class AuthService {
         }
     }
 
+    @Override
     public ResponseEntity<ResTemplateDto> login(ReqLoginDto data, HttpServletResponse response) {
         try {
             User user = userRepository.findByEmailOrUsername(data.getEmailorusername(), data.getEmailorusername());
@@ -105,6 +107,7 @@ public class AuthService {
         }
     }
 
+    @Override
     public ResponseEntity<ResTemplateDto> refreshToken(String refreshToken) {
         try {
             if (Boolean.FALSE.equals(jwtUtil.validateRefreshToken(refreshToken))) {
@@ -128,8 +131,7 @@ public class AuthService {
         }
     }
 
-
-    public Map<String, Object> createPayload(User user) {
+    private Map<String, Object> createPayload(User user) {
         List<String> roles = new ArrayList<>();
         for (Role role : user.getRole()) {
             roles.add(role.getName());
@@ -146,6 +148,7 @@ public class AuthService {
         return claims;
     }
 
+    @Override
     public ResponseEntity<ResTemplateDto> validateToken(String authToken) {
         // Token validation
         if (!StringUtils.hasText(authToken))

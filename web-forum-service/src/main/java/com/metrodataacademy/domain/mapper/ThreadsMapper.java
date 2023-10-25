@@ -12,7 +12,7 @@ public interface ThreadsMapper {
     @Mapping(target = "author", ignore = true)
     @Mapping(target = "totalViews", source = "counter")
     @Mapping(target = "totalPostComments", ignore = true)
-    ResGetThreadsDto threadsToResGetListThreads(Threads threads);
+    ResGetThreadsDto threadsToResGetThreads(Threads threads);
 
     Threads ReqCreateThreadsDtoToThreads(ReqCreateThreadsDto reqCreateThreadsDto);
 }

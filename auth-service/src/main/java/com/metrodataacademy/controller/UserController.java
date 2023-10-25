@@ -18,4 +18,9 @@ public class UserController {
     public ResponseEntity<ResTemplateDto> updateUser(@Valid @RequestBody ReqUpdateUserDto reqUpdateUserDto, @RequestHeader("Authorization") String authToken){
         return userService.updateUser(reqUpdateUserDto,authToken);
     }
+
+    @GetMapping("/get-profile")
+    public ResponseEntity<ResTemplateDto> getProfile(@RequestHeader("Authorization") String authToken){
+        return userService.getProfile(authToken);
+    }
 }

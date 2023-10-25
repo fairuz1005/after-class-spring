@@ -8,5 +8,7 @@ import org.springframework.http.ResponseEntity;
 public interface UserService {
     User getByEmailOrUsername(String user);
     User getByUsername(String username);
+
+    ResponseEntity<ResTemplateDto> getProfile(String authToken);
     ResponseEntity<ResTemplateDto> updateUser(ReqUpdateUserDto reqUpdateUserDto, String authToken);
 }

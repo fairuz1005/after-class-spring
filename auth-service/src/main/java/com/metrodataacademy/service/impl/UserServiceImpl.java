@@ -3,10 +3,12 @@ package com.metrodataacademy.service.impl;
 import com.metrodataacademy.domain.constant.ConstantVariables;
 import com.metrodataacademy.domain.dto.request.ReqUpdateUserDto;
 import com.metrodataacademy.domain.dto.response.ResTemplateDto;
+import com.metrodataacademy.domain.dto.response.ResUserProfileDto;
 import com.metrodataacademy.domain.entity.User;
 import com.metrodataacademy.domain.mapper.UserMapper;
 import com.metrodataacademy.repository.UserRepository;
 import com.metrodataacademy.service.interfaces.UserService;
+import com.metrodataacademy.util.JwtUtil;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -22,6 +24,7 @@ import java.util.Map;
 @RequiredArgsConstructor
 public class UserServiceImpl implements UserService {
 
+    private final JwtUtil jwtUtil;
     private final UserRepository userRepository;
     private final UserMapper userMapper;
 
@@ -57,9 +60,23 @@ public class UserServiceImpl implements UserService {
 
             userMapper.update(userCheck, reqUpdateUserDto);
             userRepository.save(userCheck);
-            return new ResponseEntity<>(new ResTemplateDto(userCheck, ConstantVariables.SUCCESS_MESSAGE), HttpStatus.OK);
+            ResUserProfileDto resUserProfileDto = userMapper.userToResProfileDto(userCheck);
+
+            return new ResponseEntity<>(new ResTemplateDto(resUserProfileDto, ConstantVariables.SUCCESS_MESSAGE), HttpStatus.OK);
         } catch (ResponseStatusException e) {
             throw new ResponseStatusException(e.getStatusCode(), e.getReason());
         }
+    }
+
+    @Override
+    public ResponseEntity<ResTemplateDto> getProfile(String authToken) {
+        String token = authToken.substring(7, authToken.length());
+        String username = jwtUtil.extractUsername(token);
+
+        User user = userRepository.findByUsername(username);
+
+        ResUserProfileDto resUserProfileDto = userMapper.userToResProfileDto(user);
+
+        return new ResponseEntity<>(new ResTemplateDto(resUserProfileDto, ConstantVariables.SUCCESS_MESSAGE), HttpStatus.OK);
     }
 }

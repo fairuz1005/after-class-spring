@@ -47,7 +47,7 @@ public class ThreadsServiceImpl implements ThreadsService {
         threads.setCounter(threads.getCounter()+1);
         threadsRepository.save(threads);
 
-        ResGetThreadsDto resGetThreadsDto = threadsMapper.threadsToResGetListThreads(threads);
+        ResGetThreadsDto resGetThreadsDto = threadsMapper.threadsToResGetThreads(threads);
 
         ResStagingUserDto resStagingUserDto = stagingUserMapper.stagingUserToResStagingUserDto(threads.getAuthor());
 
@@ -138,7 +138,7 @@ public class ThreadsServiceImpl implements ThreadsService {
 
             List<ResGetThreadsDto> listThreadsList = new ArrayList<>();
             pageResult.forEach(response -> {
-                ResGetThreadsDto resGetThreadsDto = threadsMapper.threadsToResGetListThreads(response);
+                ResGetThreadsDto resGetThreadsDto = threadsMapper.threadsToResGetThreads(response);
                 resGetThreadsDto.setAuthor(stagingUserMapper.stagingUserToResStagingUserDto(response.getAuthor()));
                 resGetThreadsDto.setTotalPostComments(threadsRepository.getTotalComments(resGetThreadsDto.getId()));
 

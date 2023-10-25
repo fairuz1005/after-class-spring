@@ -19,13 +19,6 @@ public class ThreadsController {
 
     private final ThreadsService threadsService;
 
-    /**
-     * this controller used to insert data to table threads
-     * @param threadsDto
-     * @param servletRequest
-     * @return Response Entity
-     */
-
     @PostMapping("/create")
     public ResponseEntity<ResBaseDto> insertThread(@Valid @RequestBody ReqCreateThreadsDto threadsDto, HttpServletRequest servletRequest) {
         AuthorizationDto authDto = (AuthorizationDto) servletRequest.getAttribute(ConstantVariable.USER);

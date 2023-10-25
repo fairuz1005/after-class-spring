@@ -11,6 +11,5 @@ import java.util.List;
 @Repository
 public interface ArticlesCategoriesRepository extends JpaRepository<ArticlesCategories, String> {
 
-
     List<ArticlesCategories> findByArticles_Id(String id);
 }

@@ -3,7 +3,7 @@ package com.metrodataacademy.controller;
 import com.metrodataacademy.domain.dto.request.ReqLoginDto;
 import com.metrodataacademy.domain.dto.request.ReqRegisterDto;
 import com.metrodataacademy.domain.dto.response.ResTemplateDto;
-import com.metrodataacademy.service.AuthService;
+import com.metrodataacademy.service.interfaces.AuthService;
 import com.metrodataacademy.service.interfaces.UserService;
 import com.metrodataacademy.util.JwtUtil;
 import jakarta.servlet.http.HttpServletResponse;

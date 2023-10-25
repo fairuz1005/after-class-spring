@@ -23,7 +23,5 @@ public interface ArticlesRepository extends JpaRepository<Articles, String> {
             @Param("category") String category,
             Pageable pageable
     );
-
     Optional<Articles> findById(String id);
-
 }

@@ -62,6 +62,4 @@ public interface ThreadsRepository extends JpaRepository<Threads, String> {
 
     @Query(value = "SELECT COUNT(*) FROM tb_m_post WHERE threads_id = :threadId", nativeQuery = true)
     long getTotalComments(@Param("threadId") String threadId);
-
-
 }

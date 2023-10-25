@@ -30,7 +30,6 @@ public class ReqRegisterDto {
 
     @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
     @NotNull
-    @JsonFormat(pattern = "yyyy-MM-dd")
     private LocalDate tanggalLahir;
 
     @NotBlank

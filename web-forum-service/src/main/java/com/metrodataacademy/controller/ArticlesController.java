@@ -35,24 +35,11 @@ public class ArticlesController {
         return articlesService.deleteArticle(id);
     }
 
-    /**
-     *
-     * @param reqCreateArticlesDto
-     * @param servletRequest
-     * @return
-     */
     @PostMapping("/create")
     public ResponseEntity<ResBaseDto> insertArticle(@Valid @RequestBody ReqCreateArticlesDto reqCreateArticlesDto, HttpServletRequest servletRequest) {
         return articlesService.insertArticle(reqCreateArticlesDto, servletRequest);
     }
 
-    /**
-     *
-     * @param id
-     * @param reqCreateArticlesDto
-     * @param servletRequest
-     * @return
-     */
     @PostMapping("/update")
     public ResponseEntity<ResBaseDto> updateArticle(@RequestParam String id, @Valid @RequestBody ReqCreateArticlesDto reqCreateArticlesDto, HttpServletRequest servletRequest) {
         AuthorizationDto authDto = (AuthorizationDto) servletRequest.getAttribute(ConstantVariable.USER);
