@@ -11,6 +11,8 @@ services:
   auth-service:
     build:
       context: ./auth-service
+    ports:
+      - "9094"
     depends_on:
       - db_afterclass_auth
 
@@ -24,6 +26,8 @@ services:
   web-forum-service:
     build:
       context: ./web-forum-service
+    ports:
+      - "9093"
     depends_on:
       - db_afterclass_forum
 
@@ -37,6 +41,8 @@ services:
   master-service:
     build:
       context: ./master-service
+    ports:
+      - "9092"
     depends_on:
       - db_afterclass_master
 
