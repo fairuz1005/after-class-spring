@@ -1,7 +1,9 @@
 package com.metrodataacademy.domain.dto.request;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import lombok.Data;
 import org.springframework.format.annotation.DateTimeFormat;
 
@@ -22,10 +24,9 @@ public class ReqUpdateUserDto {
     @NotBlank
     private String jenisKelamin;
 
-    @NotBlank
     private String profilePicture;
 
-    @NotBlank
+    @NotNull
     @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
     private LocalDate tanggalLahir;
 
