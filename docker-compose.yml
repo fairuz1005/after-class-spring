@@ -3,9 +3,11 @@ version: '3'
 services:
   db_afterclass_auth:
     image: postgres:latest
+    ports:
+      - "5434:5432"
     environment:
-      POSTGRES_USER: user
-      POSTGRES_PASSWORD: password
+      POSTGRES_USER: dockeruser
+      POSTGRES_PASSWORD: dockerpassword
       POSTGRES_DB: afterclass_auth
 
   auth-service:
@@ -18,9 +20,11 @@ services:
 
   db_afterclass_forum:
     image: postgres:latest
+    ports:
+      - "5433:5432"
     environment:
-      POSTGRES_USER: user
-      POSTGRES_PASSWORD: password
+      POSTGRES_USER: dockeruser
+      POSTGRES_PASSWORD: dockerpassword
       POSTGRES_DB: afterclass_forum
 
   web-forum-service:
@@ -33,9 +37,11 @@ services:
 
   db_afterclass_master:
     image: postgres:latest
+    ports:
+      - "5432:5432"
     environment:
-      POSTGRES_USER: user
-      POSTGRES_PASSWORD: password
+      POSTGRES_USER: dockeruser
+      POSTGRES_PASSWORD: dockerpassword
       POSTGRES_DB: afterclass_master
 
   master-service:
