@@ -19,7 +19,7 @@ import java.util.Objects;
 @Slf4j
 public class AuthServiceRestTemplateImpl implements AuthServiceRestTemplate {
 
-    @Value("http://localhost:9094")
+    @Value("http://api-gateway:8080/api/v1/auth-service")
     private String url;
 
     private final RestTemplate restTemplate;

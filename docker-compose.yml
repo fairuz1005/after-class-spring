@@ -1,0 +1,56 @@
+version: '3'
+
+services:
+  db_afterclass_auth:
+    image: postgres:latest
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: afterclass_auth
+
+  auth-service:
+    build:
+      context: ./path/to/auth-service
+    depends_on:
+      - db_afterclass_auth
+
+  db_afterclass_forum:
+    image: postgres:latest
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: afterclass_forum
+
+  web-forum-service:
+    build:
+      context: ./path/to/web-forum-service
+    depends_on:
+      - db_afterclass_forum
+
+  db_afterclass_master:
+    image: postgres:latest
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: afterclass_master
+
+  master-service:
+    build:
+      context: ./path/to/master-service
+    depends_on:
+      - db_afterclass_master
+
+  api-gateway:
+    build:
+      context: ./path/to/api-gateway
+    depends_on:
+      - auth-service
+      - web-forum-service
+      - master-service
+    ports:
+      - "8080:8080"
+
+  redis:
+    image: redis:latest
+    ports:
+      - "6379:6379"

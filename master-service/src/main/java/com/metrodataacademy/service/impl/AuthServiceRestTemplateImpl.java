@@ -23,7 +23,7 @@ public class AuthServiceRestTemplateImpl implements AuthServiceRestTemplate {
      * the url must be defined on application.properties
      * make sure the API gateway it's already configured
      */
-    @Value("http://localhost:8080/api/v1/auth-service")
+    @Value("http://api-gateway:8080/api/v1/auth-service")
     private String url;
 
     private final RestTemplate restTemplate;
