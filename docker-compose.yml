@@ -43,12 +43,13 @@ services:
   api-gateway:
     build:
       context: ./api-gateway
+    ports:
+      - "8080:8080"
     depends_on:
       - auth-service
       - web-forum-service
       - master-service
-    ports:
-      - "8080:8080"
+
 
   redis:
     image: redis:latest
