@@ -10,7 +10,7 @@ services:
 
   auth-service:
     build:
-      context: ./path/to/auth-service
+      context: ./auth-service
     depends_on:
       - db_afterclass_auth
 
@@ -23,7 +23,7 @@ services:
 
   web-forum-service:
     build:
-      context: ./path/to/web-forum-service
+      context: ./web-forum-service
     depends_on:
       - db_afterclass_forum
 
@@ -36,13 +36,13 @@ services:
 
   master-service:
     build:
-      context: ./path/to/master-service
+      context: ./master-service
     depends_on:
       - db_afterclass_master
 
   api-gateway:
     build:
-      context: ./path/to/api-gateway
+      context: ./api-gateway
     depends_on:
       - auth-service
       - web-forum-service
