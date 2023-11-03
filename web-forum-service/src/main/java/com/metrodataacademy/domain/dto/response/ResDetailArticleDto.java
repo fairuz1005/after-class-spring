@@ -10,7 +10,7 @@ import java.util.List;
 public class ResDetailArticleDto {
     private String id;
     private String title;
-    private String content;
+    private String body;
     private String slug;
     private String caption;
     private ResStagingUserDto author;

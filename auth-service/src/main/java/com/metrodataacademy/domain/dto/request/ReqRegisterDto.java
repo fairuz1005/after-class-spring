@@ -22,7 +22,6 @@ public class ReqRegisterDto {
     @NotBlank
     private String name;
 
-    @NotBlank
     private String alamat;
 
     @NotBlank
