@@ -52,7 +52,9 @@ services:
     depends_on:
       - db_afterclass_master
     environment:
-      GOOGLE_CREDENTIALS_
+      GOOGLE_APPLICATION_CREDENTIALS: /app/keys/storage-admin-key.json
+    volumes:
+      - ./storage-admin-key.json:/app/keys/storage-admin-key.json
 
   api-gateway:
     build:
