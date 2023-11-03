@@ -51,6 +51,8 @@ services:
       - "9092"
     depends_on:
       - db_afterclass_master
+    environment:
+      GOOGLE_CREDENTIALS_
 
   api-gateway:
     build:
