@@ -71,7 +71,7 @@ public class ArticlesServiceImpl implements ArticlesService {
             if (reqCreateArticlesDto.getCategories() != null){
                 reqCreateArticlesDto.getCategories().forEach(data -> {
                     ArticlesCategories articlesCategories = new ArticlesCategories();
-                    articlesCategories.setCategories(categoriesService.getCategoriesById(data.getId()));
+                    articlesCategories.setCategories(categoriesService.getCategoriesByName(data.getName()));
                     articlesCategories.setArticles(articles);
                     articlesCategoriesRepository.save(articlesCategories);
                 });

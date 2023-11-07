@@ -29,4 +29,9 @@ public class CategoriesServiceImpl implements CategoriesService {
         return new ResponseEntity<>(new ResBaseDto(listCategories, "Success"), HttpStatus.OK);
     }
 
+    @Override
+    public Categories getCategoriesByName(String name) {
+        return categoriesRepository.findByName(name).get();
+    }
+
 }

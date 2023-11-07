@@ -9,4 +9,6 @@ public interface CategoriesService {
     Categories getCategoriesById(String id);
 
     ResponseEntity<ResBaseDto> getAllCategories();
+
+    Categories getCategoriesByName(String name);
 }
