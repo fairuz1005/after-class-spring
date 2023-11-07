@@ -1,0 +1,1442 @@
+{
+	"info": {
+		"_postman_id": "1c8b866a-58fa-46dc-bc07-aa5f80a22ae5",
+		"name": "spring-training-microservice",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23702010"
+	},
+	"item": [
+		{
+			"name": "auth-service",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"fairuzsatriamlengkap3@gmail.com\",\r\n    \"username\": \"flengkap3\",\r\n    \"jenisKelamin\": \"Laki-laki\",\r\n    \"alamat\": \"test\",\r\n    \"tanggalLahir\": \"2001-10-05\",\r\n    \"password\": \"fairuz.satria\",\r\n    \"name\": \"Fairuz Satria Mahardika\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://34.125.215.71:8080/api/v1/auth-service/auth/register",
+							"protocol": "http",
+							"host": [
+								"34",
+								"125",
+								"215",
+								"71"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"auth-service",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Register",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"fairuzsatriamlengkap3@gmail.com\",\r\n    \"username\": \"flengkap3\",\r\n    \"jenisKelamin\": \"Laki-laki\",\r\n    \"alamat\": \"test\",\r\n    \"tanggalLahir\": \"2001-10-05\",\r\n    \"password\": \"fairuz.satria\",\r\n    \"name\": \"Fairuz Satria Mahardika\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://34.125.215.71:8080/api/v1/auth-service/auth/register",
+									"protocol": "http",
+									"host": [
+										"34",
+										"125",
+										"215",
+										"71"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"auth-service",
+										"auth",
+										"register"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "transfer-encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 02 Nov 2023 17:05:48 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"email\": \"fairuzsatriamlengkap3@gmail.com\",\n        \"username\": \"flengkap3\",\n        \"name\": \"Fairuz Satria Mahardika\",\n        \"alamat\": \"test\",\n        \"jenisKelamin\": \"Laki-laki\",\n        \"tanggalLahir\": \"2001-10-05\",\n        \"password\": null\n    },\n    \"message\": \"Success\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"emailorusername\": \"flengkap3(edit)\",\r\n    \"password\": \"fairuz.satria\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://34.125.215.71:8080/api/v1/auth-service/auth/login",
+							"protocol": "http",
+							"host": [
+								"34",
+								"125",
+								"215",
+								"71"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"auth-service",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Login",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"emailorusername\": \"flengkap3(edit)\",\r\n    \"password\": \"fairuz.satria\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://34.125.215.71:8080/api/v1/auth-service/auth/login",
+									"protocol": "http",
+									"host": [
+										"34",
+										"125",
+										"215",
+										"71"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"auth-service",
+										"auth",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "transfer-encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 02 Nov 2023 06:19:50 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"token\": \"eyJhbGciOiJIUzI1NiJ9.eyJpZCI6IjhmYmFmOGI5LWFmODktNGFjZS1iZWFiLTg2YWI4ZjQzNzY3YiIsImVtYWlsIjoiZmFpcnV6c2F0cmlhbWxlbmdrYXAzQGdtYWlsLmNvbSIsInVzZXJuYW1lIjoiZmxlbmdrYXAzKGVkaXQpIiwibmFtZSI6IkZhaXJ1eiBTYXRyaWEgTWFoYXJkaWthIChlZGl0KSIsInJvbGVzIjpbIlJPTEVfVVNFUiJdLCJzdWIiOiJmbGVuZ2thcDMoZWRpdCkiLCJpYXQiOjE2OTg5MDU5OTAsImV4cCI6MTY5ODkwNzc5MH0.txzxdILBWO3YRgJV02Hce63hcYCM2VMTcO4ZMb4w0eA\",\n        \"refreshToken\": \"eyJhbGciOiJIUzI1NiJ9.eyJpZCI6IjhmYmFmOGI5LWFmODktNGFjZS1iZWFiLTg2YWI4ZjQzNzY3YiIsImVtYWlsIjoiZmFpcnV6c2F0cmlhbWxlbmdrYXAzQGdtYWlsLmNvbSIsInVzZXJuYW1lIjoiZmxlbmdrYXAzKGVkaXQpIiwibmFtZSI6IkZhaXJ1eiBTYXRyaWEgTWFoYXJkaWthIChlZGl0KSIsInJvbGVzIjpbIlJPTEVfVVNFUiJdLCJzdWIiOiJmbGVuZ2thcDMoZWRpdCkiLCJpYXQiOjE2OTg5MDU5OTAsImV4cCI6MTcwMjUwNTk5MH0.ThnmzoulLRKXiuEnN-qKAjzSf-UuamDEmKj_neLL2aU\",\n        \"exp\": \"Thu Nov 02 13:49:50 ICT 2023\"\n    },\n    \"message\": \"Success\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Validate Token",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJpZCI6IjkwOTMzY2RkLTRkYTAtNGUzNC04OWIzLTYzYmIxNjE5OTg3ZSIsImVtYWlsIjoiZmFpcnV6c2F0cmlAZ21haWwuY29tIiwidXNlcm5hbWUiOiJmIiwicm9sZXMiOlsiUk9MRV9VU0VSIl0sInN1YiI6ImYiLCJpYXQiOjE2OTcxNjY3MTgsImV4cCI6MTY5NzE2ODUxOH0.9vDlOMAxAmzdKK94aRZt77AlN5hdDn4uEcta17xAxvE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/auth-service/auth/validate-token",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"auth-service",
+								"auth",
+								"validate-token"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Test Load Balancer",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Get User Profile",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://34.125.215.71:8080/api/v1/auth-service/user/get-profile",
+							"protocol": "http",
+							"host": [
+								"34",
+								"125",
+								"215",
+								"71"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"auth-service",
+								"user",
+								"get-profile"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://34.125.215.71:8080/api/v1/auth-service/user/get-profile",
+									"protocol": "http",
+									"host": [
+										"34",
+										"125",
+										"215",
+										"71"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"auth-service",
+										"user",
+										"get-profile"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "transfer-encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 02 Nov 2023 06:20:21 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"username\": \"flengkap3(edit)\",\n        \"name\": \"Fairuz Satria Mahardika (edit)\",\n        \"alamat\": \"test\",\n        \"jenisKelamin\": \"Laki-laki\",\n        \"profilePicture\": null,\n        \"tanggalLahir\": \"2001-10-05\",\n        \"email\": \"fairuzsatriamlengkap3@gmail.com\"\n    },\n    \"message\": \"Success\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Update Profile",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"fairuzsatriamlengkap3@gmail.com\",\r\n    \"username\": \"flengkap3(edit)\",\r\n    \"jenisKelamin\": \"Laki-laki\",\r\n    \"alamat\": \"test\",\r\n    \"tanggalLahir\": \"2001-10-05\",\r\n    \"name\": \"Fairuz Satria Mahardika (edit lagi lagi)\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://34.125.215.71:8080/api/v1/auth-service/user/update-profile",
+							"protocol": "http",
+							"host": [
+								"34",
+								"125",
+								"215",
+								"71"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"auth-service",
+								"user",
+								"update-profile"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"fairuzsatriamlengkap3@gmail.com\",\r\n    \"username\": \"flengkap3(edit)\",\r\n    \"jenisKelamin\": \"Laki-laki\",\r\n    \"alamat\": \"test\",\r\n    \"tanggalLahir\": \"2001-10-05\",\r\n    \"name\": \"Fairuz Satria Mahardika (edit lagi lagi)\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://34.125.215.71:8080/api/v1/auth-service/user/update-profile",
+									"protocol": "http",
+									"host": [
+										"34",
+										"125",
+										"215",
+										"71"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"auth-service",
+										"user",
+										"update-profile"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "transfer-encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 02 Nov 2023 06:34:21 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"username\": \"flengkap3(edit)\",\n        \"name\": \"Fairuz Satria Mahardika (edit lagi lagi)\",\n        \"alamat\": \"test\",\n        \"jenisKelamin\": \"Laki-laki\",\n        \"profilePicture\": null,\n        \"tanggalLahir\": \"2001-10-05\",\n        \"email\": \"fairuzsatriamlengkap3@gmail.com\"\n    },\n    \"message\": \"Success\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "web-forum-service",
+			"item": [
+				{
+					"name": "articles",
+					"item": [
+						{
+							"name": "Create Article",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\": \"test\",\r\n    \"body\": \"test\",\r\n    \"banner\": \"test\",\r\n    \"imageUrl\": \"test\",\r\n    \"categories\": [\r\n        {\r\n            \"name\": \"Mengajar\"\r\n        }\r\n    ]\r\n\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://34.125.215.71:8080/api/v1/web-forum-service/article/create",
+									"protocol": "http",
+									"host": [
+										"34",
+										"125",
+										"215",
+										"71"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"web-forum-service",
+										"article",
+										"create"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Create Article",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"title\": \"test\",\r\n    \"body\": \"test\",\r\n    \"banner\": \"test\",\r\n    \"imageUrl\": \"test\",\r\n    \"categories\": [\r\n        {\r\n            \"id\": \"47b81258-3e5a-4f36-9bc0-787770de5e78\"\r\n        }\r\n    ]\r\n\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://34.125.215.71:8080/api/v1/web-forum-service/article/create",
+											"protocol": "http",
+											"host": [
+												"34",
+												"125",
+												"215",
+												"71"
+											],
+											"port": "8080",
+											"path": [
+												"api",
+												"v1",
+												"web-forum-service",
+												"article",
+												"create"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "transfer-encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Date",
+											"value": "Thu, 02 Nov 2023 06:28:33 GMT"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": {\n        \"id\": \"5f5bd4f3-b098-41bd-a2d9-ab757ff6c42d\"\n    },\n    \"message\": \"Success\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Get Detail",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://34.125.215.71:8080/api/v1/web-forum-service/article?id=5f5bd4f3-b098-41bd-a2d9-ab757ff6c42d",
+									"protocol": "http",
+									"host": [
+										"34",
+										"125",
+										"215",
+										"71"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"web-forum-service",
+										"article"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "5f5bd4f3-b098-41bd-a2d9-ab757ff6c42d"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Get Detail",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://34.125.215.71:8080/api/v1/web-forum-service/article?id=5f5bd4f3-b098-41bd-a2d9-ab757ff6c42d",
+											"protocol": "http",
+											"host": [
+												"34",
+												"125",
+												"215",
+												"71"
+											],
+											"port": "8080",
+											"path": [
+												"api",
+												"v1",
+												"web-forum-service",
+												"article"
+											],
+											"query": [
+												{
+													"key": "id",
+													"value": "5f5bd4f3-b098-41bd-a2d9-ab757ff6c42d"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "transfer-encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Date",
+											"value": "Thu, 02 Nov 2023 06:34:28 GMT"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": {\n        \"id\": \"5f5bd4f3-b098-41bd-a2d9-ab757ff6c42d\",\n        \"title\": \"test\",\n        \"slug\": \"test\",\n        \"author\": {\n            \"id\": \"8fbaf8b9-af89-4ace-beab-86ab8f43767b\",\n            \"name\": \"Fairuz Satria Mahardika (edit lagi lagi)\"\n        },\n        \"counter\": 0,\n        \"imageUrl\": \"test\",\n        \"createdAt\": \"2023-11-02T13:28:33.482+07:00\",\n        \"updatedAt\": \"2023-11-02T13:28:33.482+07:00\",\n        \"categories\": [\n            {\n                \"id\": \"47b81258-3e5a-4f36-9bc0-787770de5e78\",\n                \"name\": \"Enterntaintment\"\n            }\n        ]\n    },\n    \"message\": \"Success\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Update Article",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJpZCI6IjMxODhkYWY1LTcxZjUtNDdiNS1iOGQ5LWM5OTI3M2QyOTljZiIsImVtYWlsIjoiZmFpcnV6c2F0cmlAZ21haWwuY29tIiwidXNlcm5hbWUiOiJmIiwicm9sZXMiOlsiUk9MRV9VU0VSIl0sInN1YiI6ImYiLCJpYXQiOjE2OTcxODg1MTAsImV4cCI6MTY5NzE5MDMxMH0.6w5lKJ7pwUmg08lYMVUVklOBeBFbvsHmPHokYle159s",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\": \"test\",\r\n    \"body\": \"test\",\r\n    \"banner\": \"test\",\r\n    \"imageUrl\": \"test\",\r\n    \"categories\": [\r\n        {\r\n            \"id\": \"47b81258-3e5a-4f36-9bc0-787770de5e78\"\r\n        }\r\n    ]\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://34.125.215.71:8080/api/v1/web-forum-service/article/update?id=8e7dc1e8-4e12-4148-a34c-86c4decaf2a7",
+									"protocol": "http",
+									"host": [
+										"34",
+										"125",
+										"215",
+										"71"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"web-forum-service",
+										"article",
+										"update"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "8e7dc1e8-4e12-4148-a34c-86c4decaf2a7"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get List Articles",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"page\": 1,\r\n    \"title\": \"\",\r\n    \"category\":\"\" \r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://34.125.215.71:8080/api/v1/web-forum-service/article/list",
+									"protocol": "http",
+									"host": [
+										"34",
+										"125",
+										"215",
+										"71"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"web-forum-service",
+										"article",
+										"list"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Get List Articles",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"page\": 1,\r\n    \"title\": \"\",\r\n    \"category\":\"\" \r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://34.125.215.71:8080/api/v1/web-forum-service/article/list",
+											"protocol": "http",
+											"host": [
+												"34",
+												"125",
+												"215",
+												"71"
+											],
+											"port": "8080",
+											"path": [
+												"api",
+												"v1",
+												"web-forum-service",
+												"article",
+												"list"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "transfer-encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Date",
+											"value": "Thu, 02 Nov 2023 06:27:32 GMT"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": [\n        {\n            \"id\": \"be5ecc25-faf3-4448-bead-8978a3c34b3a\",\n            \"title\": \"test\",\n            \"imageUrl\": \"test\",\n            \"createdAt\": \"2023-10-13 16:11:27.588188\",\n            \"categories\": [\n                {\n                    \"id\": \"47b81258-3e5a-4f36-9bc0-787770de5e78\",\n                    \"name\": \"Enterntaintment\"\n                },\n                {\n                    \"id\": \"47b81258-3e5a-4f36-9bc0-787770de5e79\",\n                    \"name\": \"Governement\"\n                }\n            ]\n        },\n        {\n            \"id\": \"be5ecc25-faf3-4448-bead-8978a3c34b3a\",\n            \"title\": \"test\",\n            \"imageUrl\": \"test\",\n            \"createdAt\": \"2023-10-13 16:11:27.588188\",\n            \"categories\": [\n                {\n                    \"id\": \"47b81258-3e5a-4f36-9bc0-787770de5e78\",\n                    \"name\": \"Enterntaintment\"\n                },\n                {\n                    \"id\": \"47b81258-3e5a-4f36-9bc0-787770de5e79\",\n                    \"name\": \"Governement\"\n                }\n            ]\n        },\n        {\n            \"id\": \"8e7dc1e8-4e12-4148-a34c-86c4decaf2a7\",\n            \"title\": \"test\",\n            \"imageUrl\": \"test\",\n            \"createdAt\": \"2023-10-13 16:35:13.21397\",\n            \"categories\": [\n                {\n                    \"id\": \"47b81258-3e5a-4f36-9bc0-787770de5e78\",\n                    \"name\": \"Enterntaintment\"\n                }\n            ]\n        },\n        {\n            \"id\": \"a1b82c2a-84d1-4cb4-9ceb-33052ab52f02\",\n            \"title\": \"test\",\n            \"imageUrl\": \"test\",\n            \"createdAt\": \"2023-10-13 16:36:56.182417\",\n            \"categories\": [\n                {\n                    \"id\": \"47b81258-3e5a-4f36-9bc0-787770de5e78\",\n                    \"name\": \"Enterntaintment\"\n                }\n            ]\n        }\n    ],\n    \"message\": \"Success\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Delete Articles",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://34.125.215.71:8080/api/v1/web-forum-service/article/delete",
+									"protocol": "http",
+									"host": [
+										"34",
+										"125",
+										"215",
+										"71"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"web-forum-service",
+										"article",
+										"delete"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "threads",
+					"item": [
+						{
+							"name": "Create Threads",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\": \"tis\",\r\n    \"content\": \"test\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://34.125.215.71:8080/api/v1/web-forum-service/threads/create",
+									"protocol": "http",
+									"host": [
+										"34",
+										"125",
+										"215",
+										"71"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"web-forum-service",
+										"threads",
+										"create"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Create Threads",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"title\": \"tis\",\r\n    \"content\": \"test\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://34.125.215.71:8080/api/v1/web-forum-service/threads/create",
+											"protocol": "http",
+											"host": [
+												"34",
+												"125",
+												"215",
+												"71"
+											],
+											"port": "8080",
+											"path": [
+												"api",
+												"v1",
+												"web-forum-service",
+												"threads",
+												"create"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "transfer-encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 07 Nov 2023 07:02:11 GMT"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": {\n        \"id\": \"aa2b827e-e0e3-4f39-bdef-cf400a8f4103\",\n        \"totalPostComments\": 0\n    },\n    \"message\": \"Success\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Get List Threads",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"page\": 1,\r\n    \"filterBy\": \"title\",\r\n    \"keyword\": \"tis\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://34.125.215.71:8080/api/v1/web-forum-service/threads/list",
+									"protocol": "http",
+									"host": [
+										"34",
+										"125",
+										"215",
+										"71"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"web-forum-service",
+										"threads",
+										"list"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Get List Threads",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"page\": 1,\r\n    \"filterBy\": \"title\",\r\n    \"keyword\": \"tis\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://34.125.215.71:8080/api/v1/web-forum-service/threads/list",
+											"protocol": "http",
+											"host": [
+												"34",
+												"125",
+												"215",
+												"71"
+											],
+											"port": "8080",
+											"path": [
+												"api",
+												"v1",
+												"web-forum-service",
+												"threads",
+												"list"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "transfer-encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 07 Nov 2023 07:02:45 GMT"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": [\n        {\n            \"id\": \"aa2b827e-e0e3-4f39-bdef-cf400a8f4103\",\n            \"title\": \"tis\",\n            \"content\": \"test\",\n            \"author\": {\n                \"id\": \"1cca0aa0-ab7a-48d0-95c5-de588a6963bb\",\n                \"name\": \"Fairuz Satria Mahardika\"\n            },\n            \"createdAt\": \"2023-11-07T07:02:11.256+00:00\",\n            \"totalViews\": 0,\n            \"totalPostComments\": 0\n        },\n        {\n            \"id\": \"5d4aca7c-7e10-4e2e-b85f-f1b26e5ef641\",\n            \"title\": \"tis\",\n            \"content\": \"test\",\n            \"author\": {\n                \"id\": \"1cca0aa0-ab7a-48d0-95c5-de588a6963bb\",\n                \"name\": \"Fairuz Satria Mahardika\"\n            },\n            \"createdAt\": \"2023-11-07T07:01:41.614+00:00\",\n            \"totalViews\": 0,\n            \"totalPostComments\": 0\n        }\n    ],\n    \"message\": \"Success\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Get Detail Threads",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://34.125.215.71:8080/api/v1/web-forum-service/threads?id=aa2b827e-e0e3-4f39-bdef-cf400a8f4103",
+									"protocol": "http",
+									"host": [
+										"34",
+										"125",
+										"215",
+										"71"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"web-forum-service",
+										"threads"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "aa2b827e-e0e3-4f39-bdef-cf400a8f4103"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Get Detail Threads",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://34.125.215.71:8080/api/v1/web-forum-service/threads?id=aa2b827e-e0e3-4f39-bdef-cf400a8f4103",
+											"protocol": "http",
+											"host": [
+												"34",
+												"125",
+												"215",
+												"71"
+											],
+											"port": "8080",
+											"path": [
+												"api",
+												"v1",
+												"web-forum-service",
+												"threads"
+											],
+											"query": [
+												{
+													"key": "id",
+													"value": "aa2b827e-e0e3-4f39-bdef-cf400a8f4103"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "transfer-encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 07 Nov 2023 07:04:26 GMT"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": {\n        \"id\": \"aa2b827e-e0e3-4f39-bdef-cf400a8f4103\",\n        \"title\": \"tis\",\n        \"content\": \"test\",\n        \"author\": {\n            \"id\": \"1cca0aa0-ab7a-48d0-95c5-de588a6963bb\",\n            \"name\": \"Fairuz Satria Mahardika\"\n        },\n        \"createdAt\": \"2023-11-07T07:02:11.256+00:00\",\n        \"totalViews\": 1,\n        \"totalPostComments\": 0\n    },\n    \"message\": \"Success\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Delete Threads",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/v1/web-forum-service/threads/delete?id",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"web-forum-service",
+										"threads",
+										"delete"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": null
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "post",
+					"item": [
+						{
+							"name": "Create Post to Threads",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"idThreads\": \"aa2b827e-e0e3-4f39-bdef-cf400a8f4103\",\r\n    \"content\": \"test\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://34.125.215.71:8080/api/v1/web-forum-service/threads/comment",
+									"protocol": "http",
+									"host": [
+										"34",
+										"125",
+										"215",
+										"71"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"web-forum-service",
+										"threads",
+										"comment"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Create Post to Threads",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"idThreads\": \"aa2b827e-e0e3-4f39-bdef-cf400a8f4103\",\r\n    \"content\": \"test\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://34.125.215.71:8080/api/v1/web-forum-service/threads/comment",
+											"protocol": "http",
+											"host": [
+												"34",
+												"125",
+												"215",
+												"71"
+											],
+											"port": "8080",
+											"path": [
+												"api",
+												"v1",
+												"web-forum-service",
+												"threads",
+												"comment"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "transfer-encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 07 Nov 2023 07:12:42 GMT"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": {\n        \"threadsId\": \"aa2b827e-e0e3-4f39-bdef-cf400a8f4103\",\n        \"postId\": \"e276cb32-6a53-47c2-8348-d870c9a000ac\",\n        \"content\": \"test\",\n        \"author\": {\n            \"id\": \"1cca0aa0-ab7a-48d0-95c5-de588a6963bb\",\n            \"name\": \"Fairuz Satria Mahardika\"\n        }\n    },\n    \"message\": \"Success\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Get List Post in a Threads",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://34.125.215.71:8080/api/v1/web-forum-service/threads/comment?threadsId=aa2b827e-e0e3-4f39-bdef-cf400a8f4103&page=1",
+									"protocol": "http",
+									"host": [
+										"34",
+										"125",
+										"215",
+										"71"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"web-forum-service",
+										"threads",
+										"comment"
+									],
+									"query": [
+										{
+											"key": "threadsId",
+											"value": "aa2b827e-e0e3-4f39-bdef-cf400a8f4103"
+										},
+										{
+											"key": "page",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Get List Post in a Threads",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://34.125.215.71:8080/api/v1/web-forum-service/threads/comment?threadsId=aa2b827e-e0e3-4f39-bdef-cf400a8f4103&page=1",
+											"protocol": "http",
+											"host": [
+												"34",
+												"125",
+												"215",
+												"71"
+											],
+											"port": "8080",
+											"path": [
+												"api",
+												"v1",
+												"web-forum-service",
+												"threads",
+												"comment"
+											],
+											"query": [
+												{
+													"key": "threadsId",
+													"value": "aa2b827e-e0e3-4f39-bdef-cf400a8f4103"
+												},
+												{
+													"key": "page",
+													"value": "1"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "transfer-encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 07 Nov 2023 07:14:47 GMT"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": [\n        {\n            \"threadsId\": \"aa2b827e-e0e3-4f39-bdef-cf400a8f4103\",\n            \"postId\": \"e276cb32-6a53-47c2-8348-d870c9a000ac\",\n            \"content\": \"test\",\n            \"author\": null\n        }\n    ],\n    \"message\": \"Success\"\n}"
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "master-service",
+			"item": [
+				{
+					"name": "Upload Profile Picture",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJpZCI6IjkwMzI4MmI1LTVjYTktNDZiMC05ZTI4LTllZjQ3MTU2ODJjNiIsImVtYWlsIjoiZmFpcnV6c2F0cmlAZ21haWwuY29tIiwidXNlcm5hbWUiOiJmIiwic3ViIjoiZiIsImlhdCI6MTY5NzQ0ODgzNSwiZXhwIjoxNzAwMDc2ODM4fQ.N1wjADOl0voi_iVrx535bguFV2OwXf8S_GTdKKmyY9s",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/master-service/upload/image/profile-picture",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"master-service",
+								"upload",
+								"image",
+								"profile-picture"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Upload Article Image",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJpZCI6IjkwMzI4MmI1LTVjYTktNDZiMC05ZTI4LTllZjQ3MTU2ODJjNiIsImVtYWlsIjoiZmFpcnV6c2F0cmlAZ21haWwuY29tIiwidXNlcm5hbWUiOiJmIiwic3ViIjoiZiIsImlhdCI6MTY5NzQ0ODgzNSwiZXhwIjoxNzAwMDc2ODM4fQ.N1wjADOl0voi_iVrx535bguFV2OwXf8S_GTdKKmyY9s",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/master-service/upload/image/profile-picture?id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"master-service",
+								"upload",
+								"image",
+								"profile-picture"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "eyJhbGciOiJIUzI1NiJ9.eyJpZCI6IjFjY2EwYWEwLWFiN2EtNDhkMC05NWM1LWRlNTg4YTY5NjNiYiIsImVtYWlsIjoiZmFpcnV6c2F0cmlhbWxlbmdrYXAzQGdtYWlsLmNvbSIsInVzZXJuYW1lIjoiZmxlbmdrYXAzIiwibmFtZSI6IkZhaXJ1eiBTYXRyaWEgTWFoYXJkaWthIiwicm9sZXMiOlsiUk9MRV9VU0VSIl0sInN1YiI6ImZsZW5na2FwMyIsImlhdCI6MTY5OTMzOTU3MCwiZXhwIjoxNzAxOTY3NTcyfQ.Asm0jcN5MlBLiH0jkK_aOJRy1aOUKg50FScsmWg4dYU",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
