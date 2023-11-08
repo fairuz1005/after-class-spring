@@ -16,5 +16,6 @@ public class ResArticlesDto {
     private String title;
     private String imageUrl;
     private String createdAt;
+    private String body;
     private List<ResCategoriesDto> categories;
 }

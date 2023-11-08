@@ -1325,16 +1325,6 @@
 				{
 					"name": "Upload Profile Picture",
 					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiJ9.eyJpZCI6IjkwMzI4MmI1LTVjYTktNDZiMC05ZTI4LTllZjQ3MTU2ODJjNiIsImVtYWlsIjoiZmFpcnV6c2F0cmlAZ21haWwuY29tIiwidXNlcm5hbWUiOiJmIiwic3ViIjoiZiIsImlhdCI6MTY5NzQ0ODgzNSwiZXhwIjoxNzAwMDc2ODM4fQ.N1wjADOl0voi_iVrx535bguFV2OwXf8S_GTdKKmyY9s",
-									"type": "string"
-								}
-							]
-						},
 						"method": "POST",
 						"header": [],
 						"body": {
@@ -1342,16 +1332,19 @@
 							"formdata": [
 								{
 									"key": "image",
-									"value": "",
-									"type": "text"
+									"type": "file",
+									"src": "/C:/Users/USER/Downloads/spring-3-logo-png-transparent.png"
 								}
 							]
 						},
 						"url": {
-							"raw": "http://localhost:8080/api/v1/master-service/upload/image/profile-picture",
+							"raw": "http://34.125.215.71:8080/api/v1/master-service/upload/image/profile-picture",
 							"protocol": "http",
 							"host": [
-								"localhost"
+								"34",
+								"125",
+								"215",
+								"71"
 							],
 							"port": "8080",
 							"path": [
@@ -1364,28 +1357,87 @@
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "Upload Profile Picture",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "image",
+											"type": "file",
+											"src": "/C:/Users/USER/Downloads/spring-3-logo-png-transparent.png"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://34.125.215.71:8080/api/v1/master-service/upload/image/profile-picture",
+									"protocol": "http",
+									"host": [
+										"34",
+										"125",
+										"215",
+										"71"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"master-service",
+										"upload",
+										"image",
+										"profile-picture"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "transfer-encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 07 Nov 2023 08:52:02 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": \"https://storage.googleapis.com/after-class-spring/images/profile-picture/fairuzsatriamlengkap3@gmail.com-02224d7b-967b-4e0d-85c2-1450ac1360dd.png\",\n    \"message\": \"Success\"\n}"
+						}
+					]
 				},
 				{
 					"name": "Upload Article Image",
 					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
 								{
-									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiJ9.eyJpZCI6IjkwMzI4MmI1LTVjYTktNDZiMC05ZTI4LTllZjQ3MTU2ODJjNiIsImVtYWlsIjoiZmFpcnV6c2F0cmlAZ21haWwuY29tIiwidXNlcm5hbWUiOiJmIiwic3ViIjoiZiIsImlhdCI6MTY5NzQ0ODgzNSwiZXhwIjoxNzAwMDc2ODM4fQ.N1wjADOl0voi_iVrx535bguFV2OwXf8S_GTdKKmyY9s",
-									"type": "string"
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/USER/Downloads/pngwing.com.png"
 								}
 							]
 						},
-						"method": "POST",
-						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/api/v1/master-service/upload/image/profile-picture?id",
+							"raw": "http://34.125.215.71:8080/api/v1/master-service/upload/image/articles-image",
 							"protocol": "http",
 							"host": [
-								"localhost"
+								"34",
+								"125",
+								"215",
+								"71"
 							],
 							"port": "8080",
 							"path": [
@@ -1394,17 +1446,67 @@
 								"master-service",
 								"upload",
 								"image",
-								"profile-picture"
-							],
-							"query": [
-								{
-									"key": "id",
-									"value": null
-								}
+								"articles-image"
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "Upload Article Image",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "image",
+											"type": "file",
+											"src": "/C:/Users/USER/Downloads/pngwing.com.png"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://34.125.215.71:8080/api/v1/master-service/upload/image/articles-image",
+									"protocol": "http",
+									"host": [
+										"34",
+										"125",
+										"215",
+										"71"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"master-service",
+										"upload",
+										"image",
+										"articles-image"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "transfer-encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 07 Nov 2023 08:50:47 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": \"https://storage.googleapis.com/after-class-spring/images/article-image/41efc3ce-3aa0-4a5e-ae8f-c1e73a46cedb.png\",\n    \"message\": \"Success\"\n}"
+						}
+					]
 				}
 			]
 		}
