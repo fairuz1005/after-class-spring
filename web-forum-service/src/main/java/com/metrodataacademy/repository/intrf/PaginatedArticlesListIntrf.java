@@ -7,7 +7,7 @@ public interface PaginatedArticlesListIntrf {
 
     String getImageUrl();
 
-    String getSubTitle();
+    String getBody();
 
     String getCreatedAt();
 }
