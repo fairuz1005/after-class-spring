@@ -22,7 +22,7 @@ public interface PostMapper {
         StagingUser stagingUser = post.getAuthor();
         ResStagingUserDto resStagingUserDto = new ResStagingUserDto();
 
-        resStagingUserDto.setId(stagingUser.getName());
+        resStagingUserDto.setName(stagingUser.getName());
         resStagingUserDto.setId(stagingUser.getId());
 
         resGetPostDto.setAuthor(resStagingUserDto);
