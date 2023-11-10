@@ -13,9 +13,6 @@ import java.time.LocalDate;
 public class ReqUpdateUserDto {
 
     @NotBlank
-    private String username;
-
-    @NotBlank
     private String name;
 
     @NotBlank

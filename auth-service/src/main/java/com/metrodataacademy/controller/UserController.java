@@ -1,5 +1,6 @@
 package com.metrodataacademy.controller;
 
+import com.metrodataacademy.domain.dto.request.ReqChangePassword;
 import com.metrodataacademy.domain.dto.request.ReqUpdateUserDto;
 import com.metrodataacademy.domain.dto.response.ResTemplateDto;
 import com.metrodataacademy.service.interfaces.UserService;
@@ -22,5 +23,10 @@ public class UserController {
     @GetMapping("/get-profile")
     public ResponseEntity<ResTemplateDto> getProfile(@RequestHeader("Authorization") String authToken){
         return userService.getProfile(authToken);
+    }
+
+    @PostMapping("/change-password")
+    public ResponseEntity<ResTemplateDto> changePassword(@Valid @RequestBody ReqChangePassword reqChangePassword, @RequestHeader("Authorization") String authToken){
+        return userService.changePassword(reqChangePassword, authToken);
     }
 }

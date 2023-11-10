@@ -1,5 +1,6 @@
 package com.metrodataacademy.controller;
 
+import com.metrodataacademy.domain.dto.request.ReqChangePassword;
 import com.metrodataacademy.domain.dto.request.ReqLoginDto;
 import com.metrodataacademy.domain.dto.request.ReqRegisterDto;
 import com.metrodataacademy.domain.dto.response.ResTemplateDto;
@@ -9,6 +10,7 @@ import com.metrodataacademy.util.JwtUtil;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
+import lombok.Value;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -41,4 +43,6 @@ public class AuthController {
    public ResponseEntity<ResTemplateDto> validateAuthToken(@RequestHeader("Authorization") String authToken){
        return authService.validateToken(authToken);
    }
-}
+
+
+ }
