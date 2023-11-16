@@ -39,6 +39,7 @@ public class ApiHeaderFilterConfiguration extends OncePerRequestFilter {
         filterChain.doFilter(request,response);
     }
 
+    @Override
     protected boolean shouldNotFilter(HttpServletRequest request) throws ServletException {
         String path = request.getRequestURI();
         return "/no-Header".equals(path) || "/article/detail".equals(path) || "/article/list".equals(path);

@@ -181,7 +181,7 @@ public class ArticlesServiceImpl implements ArticlesService {
     public ResponseEntity<ResBaseDto> getAllArticleList(ReqGetArticles requestDetail) {
 
         Pageable pageable = PageRequest.of(requestDetail.getPage() -1,
-                ConstantVariable.DATA_PER_PAGE);
+                requestDetail.getSize());
         Page<PaginatedArticlesListIntrf> pageResult = articlesRepository.findAllArticles(requestDetail.getTitle(), requestDetail.getCategory(), pageable);
 
 

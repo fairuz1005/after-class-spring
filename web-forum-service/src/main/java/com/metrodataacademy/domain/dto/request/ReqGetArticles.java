@@ -18,4 +18,6 @@ public class ReqGetArticles {
     @NotNull
     @Min(1)
     private int page;
+
+    private int size = 1000;
 }
